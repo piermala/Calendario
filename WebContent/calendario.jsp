@@ -1,5 +1,9 @@
+<%@page import="dao.CalendarDAO"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    
+    
+	
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -56,8 +60,7 @@
 			<!-- DIV DA CUI PRENDERE L'ID CLIENTE -->
 			<div id="idCliente" class="hidden">avf</div>
 			
-			<!-- prendo il prossimo id dal campo hidden -->
-			<div id="idProssimo" class="hidden"><%out.println(1);%></div>
+			
 		
 			
 			
@@ -171,7 +174,8 @@
 	/* initialize the calendar
 	-----------------------------------------------------------------*/
 	/// prossimo id
-	var idGenerato = parseInt(document.getElementById("idProssimo").textContent);
+	var idGenerato = 1;
+		//parseInt(document.getElementById("idProssimo").textContent);
 	
 	var date = new Date();
 	var d = date.getDate();
@@ -231,7 +235,7 @@
 			bootbox.prompt("New Event Title:", function(title) {
 				
 				if (title !== null && title) {
-					
+					 idGenerato++;
 					
 					$.ajax({
 						   url: '/Calendario/ServletEvent',
@@ -241,12 +245,11 @@
 								  /// se tutto va bene e riceviamo i dati dal server
 								// alert(data);
 								  
-								  if(data){
 								
-									  idGenerato++;
-									// alert(idGenerato);
+								
+									  location.reload(true);
 									
-								  }
+								
 								  
 								  
 							  } 
@@ -258,7 +261,7 @@
 					
 					calendar.fullCalendar('renderEvent',
 						{
-						    id:idGenerato,
+						    //id:idGenerato,
 							title: title,
 							start: start,
 							end: end,
@@ -274,7 +277,9 @@
 
 			calendar.fullCalendar('unselect'); 
 			
+			
 		}
+		
 		,		
 		
 		eventClick: function(calEvent, jsEvent, view) {
@@ -318,7 +323,10 @@
 						   }
 				});
 				
+				
+				
 				calendar.fullCalendar('updateEvent', calEvent);
+				
 				modal.modal("hide");
 			});
 			modal.find('button[data-action=delete]').on('click', function() {
@@ -338,7 +346,7 @@
 				modal.modal("hide"); 
 			});
 			
-			modal.modal('show').on('hidden', function(){
+			modal.modal('show').on('', function(){
 				modal.remove();
 			});
 

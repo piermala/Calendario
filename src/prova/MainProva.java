@@ -14,8 +14,7 @@ public class MainProva {
 		
 		
 		CalendarDAO cDao = new CalendarDAO();
-		cDao.aggiungiEvento(c);
-		
+		///cDao.aggiungiEvento(c);		
 		
 		
 		
