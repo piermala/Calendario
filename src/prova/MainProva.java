@@ -8,9 +8,9 @@ public class MainProva {
 	public static void main(String[] args) {
 	
 		CalendarDTO c = new CalendarDTO();
-		c.setStart("2016-12-20");
-		c.setEnd("2016-12-30");
-		c.setTitle("aaaa");
+//		c.setStartEvent("2016-12-20");
+//		c.setEndEvent("2016-12-30");
+//		c.setTitleEvent("aaaa");
 		
 		
 		CalendarDAO cDao = new CalendarDAO();

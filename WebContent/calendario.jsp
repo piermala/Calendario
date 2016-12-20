@@ -195,7 +195,7 @@
        ,
 		
 		
-		editable: true,
+		editable: false,
 		droppable: false, // this allows things to be dropped onto the calendar !!!
 		drop: function(date, allDay) { // this function is called when something is dropped
 		
@@ -243,8 +243,6 @@
 								  
 								  if(data){
 								
-								
-								
 									  idGenerato++;
 									// alert(idGenerato);
 									
@@ -256,7 +254,7 @@
 						   });
 					
 					
-					alert(idGenerato);
+					//alert(idGenerato);
 					
 					calendar.fullCalendar('renderEvent',
 						{

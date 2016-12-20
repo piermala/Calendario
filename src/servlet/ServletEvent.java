@@ -26,10 +26,13 @@ public class ServletEvent extends HttpServlet {
 	private static final long serialVersionUID = 1L;
      
     private int id;
+    private CalendarDAO cDao;
  
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		  List<CalendarDTO> l = new ArrayList<CalendarDTO>();
+		  cDao = new CalendarDAO();
+		  
+		  List<CalendarDTO> l = cDao.getTuttiGliEventi();
 		 
 //		 CalendarDTO c = new CalendarDTO();
 //		 c.setId("1");
@@ -48,8 +51,11 @@ public class ServletEvent extends HttpServlet {
 		 
 		 response.setContentType("application/json");
 		 response.setCharacterEncoding("UTF-8");
+		 
 		 PrintWriter out = response.getWriter();
 		 out.write(new Gson().toJson(l));
+		 
+		 //System.out.println(new Gson().toJson(l));
 	
 	}
 	
