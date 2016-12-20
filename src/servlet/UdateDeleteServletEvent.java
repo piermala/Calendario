@@ -12,9 +12,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.EventoDAO;
-
 import com.google.gson.Gson;
+
+import dao.CalendarDAO;
 
 /**
  * Servlet implementation class ServletEvent

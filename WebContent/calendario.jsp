@@ -57,7 +57,7 @@
 			<div id="idCliente" class="hidden">avf</div>
 			
 			<!-- prendo il prossimo id dal campo hidden -->
-			<div id="idProssimo" class="hidden"><%out.println();g%></div>
+			<div id="idProssimo" class="hidden"><%out.println(1);%></div>
 		
 			
 			

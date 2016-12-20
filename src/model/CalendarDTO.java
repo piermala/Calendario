@@ -1,4 +1,6 @@
-package servlet;
+package model;
+
+import java.io.Serializable;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -6,7 +8,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class CalendarDTO {
+public class CalendarDTO implements Serializable {
+
+	
+		private static final long serialVersionUID = 1L;
 
 		@Id
 		@GeneratedValue(strategy=GenerationType.AUTO)
@@ -51,5 +56,8 @@ public class CalendarDTO {
 	    public void setEnd(String end) {
 	        this.end = end;
 	    }
+		public static long getSerialversionuid() {
+			return serialVersionUID;
+		}
 	
 }
